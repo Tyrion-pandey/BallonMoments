@@ -101,7 +101,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 16px;
-    font-weight: bold;
+   
    
 }
 .subscribe .subs input {
@@ -116,6 +116,7 @@ a {
 }
 
 .subscribe .subs button {
+    cursor: pointer;
     width: 60%;
     margin: auto;
     border: none;
@@ -126,7 +127,10 @@ a {
     padding: 10px;
     border-radius: 8px;
 }
-
+.subscribe .subs button:hover{
+    background-color: rgb(211, 252, 63);
+    color: black;
+}
 .subscribe .subs label {
     font-size: 16px;
 }
@@ -143,11 +147,30 @@ footer {
 footer a{
     color: rgb(94, 15, 15);
 }
+.permpopup{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+.permpopup a{
+    color:black;
+    font-size:16px;
+    font-weight: bold;
+}
+.permpopup img{
+    width: 48px;
+    height: 48px;
+}
 #menu{
            display:flex;
            display: none;
            flex-direction: column;
-           background-color: #38e57d;;
+           background-image: url(/images/wave.svg);
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-color: rgb(255, 255, 255);
            width: 100vw;
            height: 100vh;
            position: fixed;
@@ -165,18 +188,34 @@ footer a{
         }
         #menu a:hover{
             color:white;
-            background-color:black;
+            background-color:rgb(47, 126, 16);
 
         }
         
        .part1{
-        background-image: url(/images/logo.jpeg);
-        background-repeat: no-repeat;
-        background-size: 100% 100px;
         border-radius: 8px;
            display:flex;
            justify-content: space-between;
-        height: 100px;
+        height: 45px;
+       }
+       .part1 ul{
+           padding: 0px;
+           margin:0px;
+           height: 40px;
+           display: flex;
+           justify-content: space-evenly;
+    
+       }
+       .part1 ul a{
+            color:#2c1b70;
+            padding:0px 10px;
+            font-size: 16px;
+            font-weight: bold;
+       }
+       .part1 ul a:hover{
+           color: white;
+           background-color: rgb(51, 49, 49);
+           font-size: 18px;
        }
        .part1 h1{
         font-family: cursive;
@@ -191,12 +230,12 @@ footer a{
        }
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1000px;
+    max-width: 500px;
     position: relative;
     margin-top:20px;
     
   }
-  
+ 
   /* Caption text */
   .text {
     color: #e7dbdb;
@@ -321,9 +360,90 @@ a {
     list-style-type:none;
 }
 .categories a{
+  
     color: rgb(121, 82, 121);
     font-family: cursive;
 }
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .prodcontainer {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .prodmySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .prodcursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prodprev,
+  .prodnext {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .prodnext {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prodprev:hover,
+  .prodnext:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .prodnumbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  
 @media only screen and (max-width:400px) {
   .container .item {
       padding:0px;
@@ -342,11 +462,43 @@ a {
   .hero p{
       font-size: 16px;
   }
+  .homelink{
+      display: none;
+  }
 }
 /*style for desktop*/
 @media only screen and (min-width:600px) {
     body{
-        width: 70%;
+        width: 80%;
         margin:auto;
     }
-}
+    .part1{
+        background-color: brown;
+    }
+    .part1 ul{
+        width:100%;
+    }
+    .part1 ul a{
+        color:white;
+        font-weight: normal;
+        font-size: 20px;
+    }
+    .part1 .hamicon{
+        display: none;
+    }
+    .part1 img{
+        height: 35px;
+    }
+    .mySlides{
+        height:500px;
+    }
+    .hero img, .product img{
+        height: 400px;
+        width: 80%;
+        margin:auto;
+        margin-top:20px;
+    }
+    .hero p{
+        font-size:20px;
+    }
+}   
