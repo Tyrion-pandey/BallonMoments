@@ -12,15 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap" rel="stylesheet">
     <title>Birthday Product</title>
-    <style>
-        html,
-        body {
-            width: 100vw;
-            margin: 0px;
-            padding: 0px;
-            overflow-x: hidden;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -34,15 +26,69 @@
 
     </div>
     <nav>
-        <div class="part1" style="background-color: white;">
+        <div class="part1">
 
-            <i><img src="/images/menu.png" width="24px" height="24px" onclick="openmenu()"></i>
-
+        <img class="hamicon" src="/images/menu.png" height="36px" onclick="openmenu()">
+        <ul>
+            <a href="index.html" class="homelink">Home</a>     
+            <a href="birthday.html">Birthday Decorations</a>
+            <a href="anniversary.html">Anniversary Decorations</a>
+            <a href="roomdecor.html">Room Decorations</a>
+            <img src="/images/logo.jpeg" height="35px">
+                </ul>
         </div>
     </nav>
 
-    <div class="product">
-        <img src="/images/WhatsApp Image 2021-12-04 at 3.05.00 PM.jpeg" width="100%" height="300px">
+   
+        <!--<img src="/images/WhatsApp Image 2021-12-04 at 3.05.00 PM.jpeg" width="100%" height="300px">-->
+        <div class="prodcontainer">
+
+            <!-- Full-width images with number text -->
+            <div class="prodmySlides">
+              <div class="prodnumbertext">1 / 4</div>
+                <img src="/images/WhatsApp Image 2021-12-04 at 3.03.03 PM (1).jpeg" style="width:100%">
+            </div>
+          
+            <div class="prodmySlides">
+              <div class="prodnumbertext">2 / 4</div>
+                <img src="/images/WhatsApp Image 2021-12-04 at 3.03.03 PM (2).jpeg" style="width:100%">
+            </div>
+          
+            <div class="prodmySlides">
+              <div class="prodnumbertext">3 / 4</div>
+                <img src="/images/WhatsApp Image 2021-12-04 at 3.03.03 PM.jpeg" style="width:100%">
+            </div>
+          
+            <div class="prodmySlides">
+              <div class="prodnumbertext">4 / 4</div>
+                <img src="/images/WhatsApp Image 2021-12-04 at 3.03.04 PM (1).jpeg" style="width:100%">
+            </div>
+          
+          
+            <!-- Next and previous buttons -->
+            <a class="prodprev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="prodnext" onclick="plusSlides(1)">&#10095;</a>
+          
+        
+            <!-- Thumbnail images -->
+            <div class="row">
+              <div class="column">
+                <img class="demo cursor" src="/images/WhatsApp Image 2021-12-04 at 3.03.03 PM (1).jpeg" style="width:100%" height="100px" onclick="currentSlide(1)" alt="The Woods">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="/images/WhatsApp Image 2021-12-04 at 3.03.03 PM (2).jpeg" style="width:100%" height="100px" onclick="currentSlide(2)" alt="Cinque Terre">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="/images/WhatsApp Image 2021-12-04 at 3.03.03 PM.jpeg" style="width:100%" height="100px" onclick="currentSlide(3)" alt="Mountains and fjords">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="/images/WhatsApp Image 2021-12-04 at 3.03.04 PM (1).jpeg" style="width:100%" height="100px" onclick="currentSlide(4)" alt="Northern Lights">
+              </div>
+            
+            </div>
+          </div>
+          
+          <div class="product">
         <div class="producttxt">
             <h1 class="heading1">Birthday Foil ballon and Banner</h1>
             <hr>
@@ -61,7 +107,7 @@
     <p style="text-align: center;"><a href="#" class="desc active" onclick="showdescription()">Description</a> <a href="#"
             class="revee" onclick="showreviews()">Reviews</a></p>
     <div class="description">
-        
+        s
         <h1 style="color:#D06224">Product Inclusion:-</h1>
         <ul>
             <li>Happy Birthday Foil Balloon Alphabet Letter</li>
@@ -92,6 +138,7 @@
             <label for="review">Your review:</label>
 
             <textarea id="review" name="review" rows="4" cols="50">
+
 
             </textarea>
             <label for="name">Name:</label>
@@ -128,7 +175,43 @@
             <a href="https://api.whatsapp.com/send?text=I want to buy anniversary Decor url: https://facebook.com Thank you! &phone=+919911014749"">Book now</a>
         </div>
     </div>
+    <div class="permpopup">
+        <a href="//api.whatsapp.com/send?phone=919911014749"><img src="/images/whatsapp.png">Whatsapp</a>
+        <a href="tel:+918882206024"><img src="/images/call.png">Call now</a>
+    </div>
+    <script>
+        var slideIndex = 1;
+showSlides(slideIndex);
 
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("prodmySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+    </script>
 </body>
+
 
 </html>
